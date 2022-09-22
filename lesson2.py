@@ -9,13 +9,14 @@ P.S. На екран має бути виведено лише одне пові
 
 age = input('Скільки Вам повних років (зазначте цифрою)?')
 if age.isdigit() and int(age) > 0:
-    if '7' in age:
+    age = int(age)
+    if '7' in str(age):
         print('Вам сьогодні пощастить!')
-    elif int(age) < 7:
+    elif age < 7:
         print('Де твої батьки?')
-    elif int(age) < 16:
+    elif age < 16:
         print('Це фільм для дорослих!')
-    elif int(age) > 65:
+    elif age > 65:
         print('Покажіть пенсійне посвідчення!')
     else:
         print('А білетів вже немає!')
