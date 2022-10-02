@@ -13,7 +13,6 @@
 # 1
 lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']
 lst2 = []
-
 for lst_value in lst1:
     if type(lst_value) is str:
         lst2.append(lst_value)
