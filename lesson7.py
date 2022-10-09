@@ -52,4 +52,3 @@ def cinema_cashier():
 
 
 cinema_cashier()
-...
