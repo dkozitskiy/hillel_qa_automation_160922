@@ -1,3 +1,9 @@
+"""
+1. Напишіть декоратор, який перетворює результат роботи функції на стрінг
+2. Напишіть докстрінг для цього декоратора
+"""
+
+
 def change_to_string(func):
     """
     This decorator that receives a function executes it. After that returns the result of the function as a string
