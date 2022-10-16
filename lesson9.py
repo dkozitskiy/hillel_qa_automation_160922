@@ -5,7 +5,8 @@ capitalize() (перший символ є верхнім регістром, а
 3. написати до кожної функції мінімум 5 assert
 4, написати декоратор, який добавляє принт з результатом роботи отриманої функції + текстовий параметр,
 отриманий ним (декоратор з параметром - це там, де три функції)
-при цьому очікувані результати роботи функції не змінюються (декоратор просто добавляє принт)'''
+при цьому очікувані результати роботи функції не змінюються (декоратор просто добавляє принт)
+'''
 
 
 # 4
@@ -68,5 +69,4 @@ assert matching_capitalize('Hi BRO') is False, 'function logic error'
 assert matching_capitalize('Hi BRO') is False, 'function logic error'
 assert matching_capitalize('Hi bro') is True, 'function logic error'
 assert matching_capitalize('1hi bro') is False, 'function logic error, digit has no uppercase'
-assert matching_capitalize(
-    1) is False, 'function logic error. If the get is not an str, the result will be False'
+assert matching_capitalize(1) is False, 'logic error. If the get is not an str, the result will be False'
