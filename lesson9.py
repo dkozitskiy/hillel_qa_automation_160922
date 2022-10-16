@@ -10,7 +10,11 @@ capitalize() (перший символ є верхнім регістром, а
 
 
 # 4
-def func_result_with_param(param):
+def func_result_with_param(param=None):
+    """
+    this decorator adds the text information specified in the decorator parameter + the result of the function execution to the decorated function
+    """
+
     def func_decorator(func):
         def wrapper(*args, **kwargs):
             result = func(*args, **kwargs)
@@ -23,7 +27,7 @@ def func_result_with_param(param):
 
 
 # 1
-@func_result_with_param(2)
+@func_result_with_param()
 def pair_check(number: int) -> bool:
     """
     a function that checks whether the number passed to it is even or not (returns True or False).
@@ -37,7 +41,7 @@ def pair_check(number: int) -> bool:
 
 
 # 2
-@func_result_with_param(2)
+@func_result_with_param()
 def matching_capitalize(string: str) -> bool:
     """
     a function that accepts a string and determines whether this string corresponds to the results of the 'capitalize()' method
