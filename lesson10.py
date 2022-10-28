@@ -97,12 +97,6 @@ class BankAccount:
         else:
             raise Exception("the amount exceeds the amount of money in the bank")
 
-    def __del__(self):
-        BankAccount.portfolio_reduction(self.money)
-        self.money -= self.money
-        print(f'''Deposit ID {self.id_deposit} in the name of {self.user_name} - closed due to the liquidation of the Bank.
-    The amount {self.money} was returned, the owner has no claims\n''')
-
     def money_transfer(self, other, summa: int):
         """
         Transferring money from one deposit to another
@@ -128,13 +122,19 @@ class BankAccount:
         print(
             "Dear Bank Director!\nPlease lower interest rates! The wife brings you all the free money.\nAnd I want a bike!\n")
 
+        def __del__(self):
+            BankAccount.portfolio_reduction(self.money)
+            self.money -= self.money
+            print(f'''Deposit ID {self.id_deposit} in the name of {self.user_name} - closed due to the liquidation of the Bank.
+           The amount {self.money} was returned, the owner has no claims\n''')
+
 
 if __name__ == '__main__':
     ivan = BankAccount('Ivan', 5_000, 10)
     egor = BankAccount('Egor', 30_000, 10)
     dazdraperma = BankAccount('Dazdraperma', 10_000, 5)
-
     dazdraperma.percent = 10
     ivan.top_up_dep(5_000)
     egor.withdraw_dep(20_000)
     dazdraperma.money_transfer(ivan, 5_000)
+    ...
