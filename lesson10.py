@@ -114,7 +114,7 @@ class BankAccount:
         """
         returns a value with the client's benefit for one day, taking into account the annual rate
         """
-        todays_profit = (self.__percent / 365) * self.money
+        todays_profit = ((self.__percent / 365) * self.money) / 100
         return todays_profit
 
     @staticmethod
