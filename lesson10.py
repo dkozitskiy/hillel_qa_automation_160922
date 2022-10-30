@@ -119,8 +119,7 @@ class BankAccount:
 
     @staticmethod
     def slogan():
-        print(
-            "Dear Bank Director!\nPlease lower interest rates! The wife brings you all the free money.\nAnd I want a bike!\n")
+        print("Dear Bank Director!\nPlease lower interest rates! The wife brings you all the free money.\nAnd I want a bike!\n")
 
     def __del__(self):
         BankAccount.portfolio_reduction(self.money)
