@@ -136,3 +136,4 @@ if __name__ == '__main__':
     ivan.top_up_dep(5_000)
     egor.withdraw_dep(20_000)
     dazdraperma.money_transfer(ivan, 5_000)
+
