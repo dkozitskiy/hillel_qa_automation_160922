@@ -123,9 +123,9 @@ class BankAccount:
 
     def __del__(self):
         BankAccount.portfolio_reduction(self.money)
+        print(f'''Deposit ID {self.id_deposit} in the name of {self.user_name} - closed due to the liquidation of the Bank. The amount
+{self.money} was returned, the owner has no claims\n''')
         self.money -= self.money
-        print(f'''Deposit ID {self.id_deposit} in the name of {self.user_name} - closed due to the liquidation of the Bank.
-       The amount {self.money} was returned, the owner has no claims\n''')
 
 
 if __name__ == '__main__':
