@@ -71,6 +71,10 @@ class School:
     def get_technical_staff_lst(self):
         return self.technical_staff_lst
 
+    @property
+    def get_teachers_lst(self):
+        return self.teachers_lst
+
     def add_teacher(self, ss):
         pass
 
