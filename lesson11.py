@@ -75,11 +75,9 @@ class School:
     def get_teachers_lst(self):
         return self.teachers_lst
 
-    def add_teacher(self, ss):
-        pass
-
 
 school1 = School('Букварик', Teacher('Ирина', 'Гном', 20000))
+school1.teachers_lst.append(Teacher('Игнат', 'Иванов', 11000))
 print(School.get_total_salary_at_school)
 t_list = school1.get_technical_staff_lst
 print(t_list)
