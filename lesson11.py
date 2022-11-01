@@ -15,19 +15,18 @@
 7. змініть директора (школа без директора не може існувати, директор при цьому переходить в список вчителів, а вчитель стає директором,
 і відповідно, видаляється зі списку вчителів)
 """
-import random
 from abc import abstractmethod, ABC
 from random import randint
 from typing import Union
 
 from faker import Faker
 
-fake = Faker()
+fake = Faker('ru_RU')
 
 
 class SchoolStaff(ABC):
 
-    def __init__(self, name: str, surname: str, salary: Union[int, float]):
+    def __init__(self, name: str, surname: str, salary: Union[int, float] = 10_000):
         self.name = name
         self.surname = surname
         self.salary = salary
@@ -52,39 +51,33 @@ class TechnicalStaff(SchoolStaff):
 
 
 class School:
-    def __init__(self, title: str, director: Teacher, teachers_at_school: int = 5, technical_staff_at_school: int = 2):
+    def __init__(self, title: str, director: Teacher, teachers_at_school: int = 1, technical_staff_at_school: int = 1):
         self.title = title
         self.director = director
         self.teachers_lst = [Teacher(fake.first_name(), fake.last_name(), randint(10000, 50000)) for employee in range(teachers_at_school)]
         self.technical_staff_lst = [Teacher(fake.first_name(), fake.last_name(), randint(10000, 50000)) for employee in
                                     range(technical_staff_at_school)]
 
-        self.teachers_at_school = teachers_at_school
-        self.technical_staff_at_school = technical_staff_at_school
+    @property
+    def get_total_salary_at_school(self):
+        all_staff = []
+        all_staff.append(self.director)
+        all_staff += self.teachers_lst
+        all_staff += self.technical_staff_lst
+        total_salary = sum(object.salary for object in all_staff)
+        return total_salary
 
-        self.staff = []
-
-        for i in range(100):
-            self.staff.append({
-                'name': fake.first_name(),
-                'surname': fake.last_name(),
-                'staff': random.choice(('teacher', 'technical')),
-                'salary': random.randint(10000, 50000)
-
-            })
+    @property
+    def get_technical_staff_lst(self):
+        return self.technical_staff_lst
 
     def add_teacher(self, ss):
         pass
 
 
-t1 = Teacher('ivanov', 'ivanivich', 1000)
-t2 = Teacher('ivanov2', 'ivanivich3', 5000)
+school1 = School('Букварик', Teacher('Ирина', 'Гном', 20000))
+print(School.get_total_salary_at_school)
+t_list = school1.get_technical_staff_lst
+print(t_list)
 
-sk = School('nom1', t1)
-sk2 = School('nom1', t1)
-
-print()
-print()
-
-sk.add_teacher(Teacher('srh', 'shhsrt', 5000))
 ...
