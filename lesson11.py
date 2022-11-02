@@ -16,7 +16,7 @@
 і відповідно, видаляється зі списку вчителів)
 """
 from abc import abstractmethod, ABC
-from random import randint
+from random import randint, choice
 from typing import Union
 
 from faker import Faker
@@ -69,9 +69,10 @@ class School:
 
     def change_director(self):
         old_director = self.director
-        new_director = self.teachers_lst.pop()
-        self.director = new_director
+        new_director = choice(self.teachers_lst)
         self.teachers_lst.append(old_director)
+        self.director = new_director
+        self.teachers_lst.remove(self.director)
 
     @property
     def get_technical_staff_lst(self):
@@ -84,5 +85,5 @@ class School:
 
 school1 = School('Букварик', Teacher('Ирина', 'Гном', 20000))
 school1.teachers_lst.append(Teacher('Игнат', 'Иванов', 11000))
-school1.change_director
+school1.change_director()
 ...
