@@ -51,7 +51,7 @@ class TechnicalStaff(SchoolStaff):
 
 
 class School:
-    def __init__(self, title: str, director: Teacher, teachers_at_school: int = 1, technical_staff_at_school: int = 1):
+    def __init__(self, title: str, director: Teacher, teachers_at_school: int = 50, technical_staff_at_school: int = 10):
         self.title = title
         self.director = director
         self.teachers_lst = [Teacher(fake.first_name(), fake.last_name(), randint(10000, 50000)) for employee in range(teachers_at_school)]
@@ -86,4 +86,4 @@ class School:
 school1 = School('Букварик', Teacher('Ирина', 'Гном', 20000))
 school1.teachers_lst.append(Teacher('Игнат', 'Иванов', 11000))
 school1.change_director()
-...
+school1.teachers_lst.append(Teacher('Изимир', 'Ковров', 1500.50))
