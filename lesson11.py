@@ -55,7 +55,7 @@ class School:
         self.title = title
         self.director = director
         self.teachers_lst = [Teacher(fake.first_name(), fake.last_name(), randint(10000, 50000)) for employee in range(teachers_at_school)]
-        self.technical_staff_lst = [Teacher(fake.first_name(), fake.last_name(), randint(10000, 50000)) for employee in
+        self.technical_staff_lst = [TechnicalStaff(fake.first_name(), fake.last_name(), randint(10000, 50000)) for employee in
                                     range(technical_staff_at_school)]
 
     @property
@@ -66,6 +66,12 @@ class School:
         all_staff += self.technical_staff_lst
         total_salary = sum(object.salary for object in all_staff)
         return total_salary
+
+    def change_director(self):
+        old_director = self.director
+        new_director = self.teachers_lst.pop()
+        self.director = new_director
+        self.teachers_lst.append(old_director)
 
     @property
     def get_technical_staff_lst(self):
@@ -78,8 +84,5 @@ class School:
 
 school1 = School('Букварик', Teacher('Ирина', 'Гном', 20000))
 school1.teachers_lst.append(Teacher('Игнат', 'Иванов', 11000))
-print(School.get_total_salary_at_school)
-t_list = school1.get_technical_staff_lst
-print(t_list)
-
+school1.change_director
 ...
