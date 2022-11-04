@@ -97,6 +97,7 @@ class School:
         return self.technical_staff_lst
 
 
-school1 = School('Букварик', Teacher('Ирина', 'Гном', 20000))
-school1.teachers_lst.append(Teacher('Игнат', 'Иванов', 11000))
-school1.change_director()
+if __name__ == '__main__':
+    school1 = School('Букварик', Teacher('Ирина', 'Гном', 20000))
+    school1.teachers_lst.append(Teacher('Игнат', 'Иванов', 11000))
+    school1.change_director()
