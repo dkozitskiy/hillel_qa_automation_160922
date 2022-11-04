@@ -42,6 +42,8 @@ class Teacher(SchoolStaff):
     def __str__(self):
         return f'Меня зовут {self.name} {self.surname}. Я буду Вас учить'
 
+    __repr__ = __str__
+
 
 class TechnicalStaff(SchoolStaff):
     """create a technical officer"""
@@ -49,41 +51,52 @@ class TechnicalStaff(SchoolStaff):
     def __str__(self):
         return f'Меня зовут {self.name} {self.surname}. Обращайтесь если что то сломалось'
 
+    __repr__ = __str__
+
 
 class School:
-    def __init__(self, title: str, director: Teacher, teachers_at_school: int = 50, technical_staff_at_school: int = 10):
+    """
+    Creation of a new school. By default, the school creates 10 teachers and 3 technical staff. It is possible to set your own values for the state.
+    For the name of the shakola, you must pass:
+    title: (str)
+    director: (Teacher)
+    teachers_at_school: (int)
+    technical_staff_at_school: (int)
+    """
+
+    def __init__(self, title: str, director: Teacher, teachers_at_school: int = 10, technical_staff_at_school: int = 3):
         self.title = title
         self.director = director
-        self.teachers_lst = [Teacher(fake.first_name(), fake.last_name(), randint(10000, 50000)) for employee in range(teachers_at_school)]
-        self.technical_staff_lst = [TechnicalStaff(fake.first_name(), fake.last_name(), randint(10000, 50000)) for employee in
+        self.teachers_lst = [Teacher(fake.first_name(), fake.last_name(), randint(10000, 50000)) for _ in range(teachers_at_school)]
+        self.technical_staff_lst = [TechnicalStaff(fake.first_name(), fake.last_name(), randint(10000, 50000)) for _ in
                                     range(technical_staff_at_school)]
 
     @property
     def get_total_salary_at_school(self):
-        all_staff = []
-        all_staff.append(self.director)
+        """the method returns the total salary for the school"""
+        all_staff = [self.director]
         all_staff += self.teachers_lst
         all_staff += self.technical_staff_lst
         total_salary = sum(object.salary for object in all_staff)
         return total_salary
 
     def change_director(self):
+        """the method changes the director to a random teacher. principal becomes teacher"""
         old_director = self.director
         new_director = choice(self.teachers_lst)
         self.teachers_lst.append(old_director)
         self.director = new_director
         self.teachers_lst.remove(self.director)
 
-    @property
-    def get_technical_staff_lst(self):
-        return self.technical_staff_lst
-
-    @property
     def get_teachers_lst(self):
+        """to print the list of teachers"""
         return self.teachers_lst
+
+    def technical_staff_lst(self):
+        """to print the list of technical personnel"""
+        return self.technical_staff_lst
 
 
 school1 = School('Букварик', Teacher('Ирина', 'Гном', 20000))
 school1.teachers_lst.append(Teacher('Игнат', 'Иванов', 11000))
 school1.change_director()
-school1.teachers_lst.append(Teacher('Изимир', 'Ковров', 1500.50))
