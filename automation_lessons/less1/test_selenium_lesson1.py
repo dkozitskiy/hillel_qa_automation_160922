@@ -61,3 +61,4 @@ def test_login():
     actual_user = driver_chrome.find_element(By.XPATH, check_user_locator).text
     expected_user = login
     assert actual_user == expected_user
+    driver_chrome.quit()
