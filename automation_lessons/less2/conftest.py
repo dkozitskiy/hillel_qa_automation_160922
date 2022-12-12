@@ -1,6 +1,7 @@
 import pytest
 
 from automation_lessons.less2.page_objects.login_page import LoginPage
+from automation_lessons.less2.page_objects.reset_password_page import ResetPasswordPage
 from automation_lessons.less2.utilities.config_parser import ReadConfig
 from automation_lessons.less2.utilities.driver_factory import DriverFactory
 
@@ -36,4 +37,4 @@ def open_login_page(create_driver):
 @pytest.fixture()
 def open_reset_password_page(create_driver):
     create_driver.get(ReadConfig.reset_password_page_url())
-    return LoginPage(create_driver)
+    return ResetPasswordPage(create_driver)
