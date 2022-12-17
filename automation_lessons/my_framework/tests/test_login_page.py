@@ -1,6 +1,6 @@
 import pytest
 
-from automation_lessons.less2.utilities.config_parser import ReadConfig
+from automation_lessons.my_framework.utilities.config_parser import ReadConfig
 
 
 @pytest.mark.regression

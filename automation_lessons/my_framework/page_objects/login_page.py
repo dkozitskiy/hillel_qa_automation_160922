@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
-from automation_lessons.less2.page_objects.python_page import PythonPage
-from automation_lessons.less2.utilities.web_ui.base_page import BasePage
+from automation_lessons.my_framework.page_objects.python_page import PythonPage
+from automation_lessons.my_framework.utilities.web_ui.base_page import BasePage
 
 
 class LoginPage(BasePage):
