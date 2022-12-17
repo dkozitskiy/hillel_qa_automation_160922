@@ -12,5 +12,5 @@ def test_left_menu_in_login_page(open_reset_password_page):
 
 
 @pytest.mark.regression
-def name_input_in_page(open_reset_password_page):
+def test_name_input_in_page(open_reset_password_page):
     assert open_reset_password_page.name_input_is_visible() is True
