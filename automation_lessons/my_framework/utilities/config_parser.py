@@ -15,6 +15,10 @@ class ReadConfig:
         return config.get('app_info', 'start_page')
 
     @staticmethod
+    def get_community_portal_page():
+        return config.get('app_info', 'community_portal_url')
+
+    @staticmethod
     def reset_password_page_url():
         return config.get('app_info', 'reset_password_page_url')
 

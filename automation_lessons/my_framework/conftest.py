@@ -45,3 +45,9 @@ def open_reset_password_page(create_driver):
 def open_home_page(create_driver):
     create_driver.get('https://uk.wikipedia.org/wiki/')
     return HomePage(create_driver)
+
+
+@pytest.fixture()
+def open_community_portal(create_driver):
+    create_driver.get('https://uk.wikipedia.org/wiki/')
+    return HomePage(create_driver)
