@@ -44,3 +44,6 @@ class LoginPage(BasePage):
 
     def header_is_visible(self):
         return self._is_visible(self.__header)
+
+    def header_is_visible(self):
+        return self._is_visible(self.__header)
