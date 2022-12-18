@@ -14,6 +14,7 @@ class HomePage(BasePage):
     __not_logged_in = (By.XPATH, '//li[@id="pt-anonuserpage"]//span')
     __topics = (By.XPATH, '//div[@id="topics"]')
 
+
     def is_title(self):
         return self.check_title(self.__title)
 
