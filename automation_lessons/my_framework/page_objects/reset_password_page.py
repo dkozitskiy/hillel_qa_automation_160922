@@ -12,7 +12,7 @@ class ResetPasswordPage(BasePage):
     __left_menu = (By.XPATH, '//div[@id="mw-panel"]')
     __name_input = (By.XPATH, '//div//input[@name="wpUsername"]')
     __email_address = (By.XPATH, '//div//input[@name="wpEmail"]')
-    __reset_password_button = (By.XPATH, '//button//span[@class="oo-ui-labelElement-label0"]')
+    __reset_password_button = (By.XPATH, '//button//span[@class="oo-ui-labelElement-label"]')
 
     def title(self):
         return self.check_title(self.__title)
