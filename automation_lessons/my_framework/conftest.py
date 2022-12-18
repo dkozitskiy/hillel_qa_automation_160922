@@ -1,5 +1,6 @@
 import pytest
 
+from automation_lessons.my_framework.page_objects.home_page import HomePage
 from automation_lessons.my_framework.page_objects.login_page import LoginPage
 from automation_lessons.my_framework.page_objects.reset_password_page import ResetPasswordPage
 from automation_lessons.my_framework.utilities.config_parser import ReadConfig
@@ -42,5 +43,5 @@ def open_reset_password_page(create_driver):
 
 @pytest.fixture()
 def open_home_page(create_driver):
-    create_driver.get(ReadConfig.get_home_page())
-    return ResetPasswordPage(create_driver)
+    create_driver.get('https://uk.wikipedia.org/wiki/')
+    return HomePage(create_driver)

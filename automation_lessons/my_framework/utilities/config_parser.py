@@ -11,12 +11,12 @@ class ReadConfig:
         return config.get('app_info', 'base_url')
 
     @staticmethod
-    def reset_password_page_url():
-        return config.get('app_info', 'reset_password_page_url')
+    def get_start_page():
+        return config.get('app_info', 'start_page')
 
     @staticmethod
-    def get_home_page():
-        return config.get('app_info', 'home_page')
+    def reset_password_page_url():
+        return config.get('app_info', 'reset_password_page_url')
 
     @staticmethod
     def get_login():
@@ -29,3 +29,6 @@ class ReadConfig:
     @staticmethod
     def get_browser_id():
         return config.get('browser_data', 'browser_id')
+
+
+
