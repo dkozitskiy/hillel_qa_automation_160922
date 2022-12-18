@@ -23,6 +23,9 @@ class BasePage:
     def __wait_until_element_to_be_selected(self, locator):
         return self.__wait.until(ES.element_to_be_selected(locator))
 
+    def __wait_until_url_to_be(self, url):
+        return self.__wait.until(ES.url_to_be(url))
+
     def _send_keys(self, locator, value):
         element = self.__wait_until_element_located(locator)
         element.clear()
@@ -54,6 +57,13 @@ class BasePage:
     def check_text_in_page(self, locator, text):
         try:
             self.__text_to_be_present(locator, text)
+            return True
+        except TimeoutException:
+            return False
+
+    def is_url_to_be(self, url):
+        try:
+            self.__wait_until_url_to_be(url)
             return True
         except TimeoutException:
             return False

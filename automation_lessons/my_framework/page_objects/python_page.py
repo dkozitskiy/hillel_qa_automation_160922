@@ -10,6 +10,7 @@ class PythonPage(BasePage):
     __user_locator = (By.XPATH, '//li[@id="pt-userpage"]//span')
     __content_menu = (By.XPATH, '//div[@role="navigation"]')
     __article_title = (By.XPATH, '//span[@class="mw-page-title-main"]')
+    __page_url = 'https://uk.wikipedia.org/wiki/Python'
     __title_Python_page = 'Python — Вікіпедія'
 
 
@@ -27,3 +28,6 @@ class PythonPage(BasePage):
 
     def is_article_title(self, text):
         return self.check_text_in_page(self.__article_title, text)
+
+    def check_url(self):
+        return self.is_url_to_be(self.__page_url)

@@ -28,3 +28,10 @@ def test_article_title(open_login_page):
     login_page = open_login_page
     python_page = login_page.login(ReadConfig.get_login(), ReadConfig.get_password())
     assert python_page.is_article_title('Python') is True
+
+
+@pytest.mark.regression
+def test_page_url(open_login_page):
+    login_page = open_login_page
+    python_page = login_page.login(ReadConfig.get_login(), ReadConfig.get_password())
+    assert python_page.check_url() is True
