@@ -12,6 +12,7 @@ class HomePage(BasePage):
     __search = (By.CSS_SELECTOR, '.vector-search-box-inner')
     __login_button = (By.XPATH, '//li[@id="pt-login"]')
     __not_logged_in = (By.XPATH, '//li[@id="pt-anonuserpage"]//span')
+    __topics = (By.XPATH, '//div[@id="topics"]')
 
     def is_title(self):
         return self.check_title(self.__title)
@@ -23,4 +24,7 @@ class HomePage(BasePage):
         return self._is_clickable(self.__login_button)
 
     def not_logged_in_is_visible(self):
-        return self._is_clickable(self.__not_logged_in)
+        return self._is_visible(self.__not_logged_in)
+
+    def topics_is_visible(self):
+        return self._is_visible(self.__topics)

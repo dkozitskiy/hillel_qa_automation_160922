@@ -19,3 +19,8 @@ def test_login_button(open_home_page):
 @pytest.mark.regression
 def test_not_logged_in_title(open_home_page):
     assert open_home_page.not_logged_in_is_visible() is True
+
+
+@pytest.mark.regression
+def test_topics_in_page(open_home_page):
+    assert open_home_page.topics_is_visible() is True
