@@ -17,6 +17,9 @@ class BasePage:
     def __wait_until_element_visible(self, locator):
         return self.__wait.until(ES.visibility_of_element_located(locator))
 
+    def __text_to_be_present(self, locator, text):
+        return self.__wait.until(ES.text_to_be_present_in_element(locator, text))
+
     def __wait_until_element_to_be_selected(self, locator):
         return self.__wait.until(ES.element_to_be_selected(locator))
 
@@ -47,3 +50,12 @@ class BasePage:
         if self._driver.title == title:
             return True
         return False
+
+    def check_text_in_page(self, locator, text):
+        try:
+            self.__text_to_be_present(locator, text)
+            return True
+        except TimeoutException:
+            return False
+
+

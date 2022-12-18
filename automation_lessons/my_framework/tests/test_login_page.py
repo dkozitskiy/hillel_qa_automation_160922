@@ -4,13 +4,6 @@ from automation_lessons.my_framework.utilities.config_parser import ReadConfig
 
 
 @pytest.mark.regression
-def test_clickable_name_in_login_page(open_login_page):
-    login_page = open_login_page
-    python_page = login_page.login(ReadConfig.get_login(), ReadConfig.get_password())
-    assert python_page.is_clickable_name() is True
-
-
-@pytest.mark.regression
 def test_title_name(open_login_page):
     assert open_login_page.title() is True
 
