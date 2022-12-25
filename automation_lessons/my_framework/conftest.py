@@ -30,11 +30,11 @@ def open_reset_password_page(create_driver):
 
 @pytest.fixture()
 def open_home_page(create_driver):
-    create_driver.get('https://uk.wikipedia.org/wiki/')
+    create_driver.get(ReadConfig.get_start_page())
     return HomePage(create_driver)
 
 
 @pytest.fixture()
 def open_community_portal(create_driver):
-    create_driver.get('https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%BA%D1%96%D0%BF%D0%B5%D0%B4%D1%96%D1%8F:%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB_%D1%81%D0%BF%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D1%82%D0%B8')
+    create_driver.get(ReadConfig.get_community_portal_page())
     return CommunityPortal(create_driver)
