@@ -16,7 +16,7 @@ class HomePage(BasePage):
 
 
     def is_title(self):
-        return self.check_title(self.__title)
+        return self._is_title(self.__title)
 
     def is_search_visible(self):
         return self._is_visible(self.__search)

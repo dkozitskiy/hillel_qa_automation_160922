@@ -50,12 +50,12 @@ class BasePage:
         element = self.__wait_until_element_clickable(locator)
         element.click()
 
-    def check_title(self, title):
+    def _is_title(self, title):
         if self._driver.title == title:
             return True
         return False
 
-    def check_text_in_page(self, locator, text):
+    def is_text_in_page(self, locator, text):
         try:
             self.__text_to_be_present(locator, text)
             return True

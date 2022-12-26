@@ -34,7 +34,7 @@ class LoginPage(BasePage):
         return PythonPage(self.driver)
 
     def is_title(self):
-        return self.check_title(self.__title)
+        return self._is_title(self.__title)
 
     def check_not_valid_login_data(self):
         return self._is_visible(self.__message_invalid_login_details)

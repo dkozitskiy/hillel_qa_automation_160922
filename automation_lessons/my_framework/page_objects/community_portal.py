@@ -24,7 +24,6 @@ class CommunityPortal(BasePage):
     def is_lock_visible(self):
         return self._is_visible(self.__lock)
 
-
     def is_how_to_help_visible(self):
         return self._is_visible(self.__how_to_help)
 

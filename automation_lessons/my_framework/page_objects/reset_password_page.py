@@ -15,7 +15,7 @@ class ResetPasswordPage(BasePage):
     __reset_password_button = (By.XPATH, '//button//span[@class="oo-ui-labelElement-label"]')
 
     def is_title(self):
-        return self.check_title(self.__title)
+        return self._is_title(self.__title)
 
     def is_left_menu_visible(self):
         return self._is_visible(self.__left_menu)
