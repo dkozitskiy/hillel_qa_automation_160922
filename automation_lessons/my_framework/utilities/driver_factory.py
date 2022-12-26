@@ -12,11 +12,11 @@ class DriverFactory:
 
     @staticmethod
     def create_driver(driver_id):
-        if int(driver_id) == 1:
+        if int(driver_id) == DriverFactory.CHROME:
             driver = Chrome(service=Service(ChromeDriverManager().install()))
-        elif int(driver_id) == 2:
+        elif int(driver_id) == DriverFactory.FIREFOX:
             driver = Firefox(service=Service(GeckoDriverManager().install()))
-        elif int(driver_id) == 3:
+        elif int(driver_id) == DriverFactory.EDGE:
             driver = Edge(service=Service(EdgeChromiumDriverManager().install()))
         else:
             driver = Chrome(service=Service(ChromeDriverManager().install()))
