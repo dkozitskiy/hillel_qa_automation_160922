@@ -16,7 +16,7 @@ class CommunityPortal(BasePage):
     __assist_and_social_life = (By.XPATH, '//td[@colspan="2"] //h2[@class="ext-discussiontools-init-section"]/..')
 
     def is_title(self):
-        return self.check_title(self.__title)
+        return self._is_title(self.__title)
 
     def is_visible_menu_container(self):
         return self._is_visible(self.__menu_container)
