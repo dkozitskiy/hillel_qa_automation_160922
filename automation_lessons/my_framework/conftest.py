@@ -41,11 +41,5 @@ def open_community_portal(create_driver):
     create_driver.get(ReadConfig.get_community_portal_page())
     return CommunityPortal(create_driver)
 
-@pytest.fixture()
-def env ():
-    with open('configuration.json') as f:
-        data = f.read()
-        json_to_dict = json.loads(data)
 
-    config = Con
 

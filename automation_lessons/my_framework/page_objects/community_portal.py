@@ -18,18 +18,18 @@ class CommunityPortal(BasePage):
     def is_title(self):
         return self.check_title(self.__title)
 
-    def menu_container_is_visible(self):
+    def is_visible_menu_container(self):
         return self._is_visible(self.__menu_container)
 
-    def lock_is_visible(self):
+    def is_lock_visible(self):
         return self._is_visible(self.__lock)
 
 
-    def how_to_help_is_visible(self):
+    def is_how_to_help_visible(self):
         return self._is_visible(self.__how_to_help)
 
-    def assist_and_social_life_is_visible(self):
+    def is_assist_and_social_life_visible(self):
         return self._is_visible(self.__assist_and_social_life)
 
-    def check_url(self):
+    def is_check_url(self):
         return self.is_url_to_be(ReadConfig.get_community_portal_page())

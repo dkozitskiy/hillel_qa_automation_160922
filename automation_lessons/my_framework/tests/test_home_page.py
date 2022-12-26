@@ -8,19 +8,19 @@ def test_title_name(open_home_page):
 
 @pytest.mark.regression
 def test_search_in_page(open_home_page):
-    assert open_home_page.search_is_visible() is True
+    assert open_home_page.is_search_visible() is True
 
 
 @pytest.mark.regression
 def test_login_button(open_home_page):
-    assert open_home_page.login_button_is_clickable() is True
+    assert open_home_page.is_login_button_clickable() is True
 
 
 @pytest.mark.regression
 def test_not_logged_in_title(open_home_page):
-    assert open_home_page.not_logged_in_is_visible() is True
+    assert open_home_page.is_visible_not_logged_in() is True
 
 
 @pytest.mark.regression
 def test_topics_in_page(open_home_page):
-    assert open_home_page.topics_is_visible() is True
+    assert open_home_page.is_visible_topics() is True

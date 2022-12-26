@@ -20,7 +20,7 @@ def test_title_name(open_login_page):
 def test_left_menu_in_login_page(open_login_page):
     login_page = open_login_page
     python_page = login_page.login(ReadConfig.get_login(), ReadConfig.get_password())
-    assert python_page.content_menu_is_visible() is True
+    assert python_page.is_content_menu_visible() is True
 
 
 @pytest.mark.regression
@@ -31,7 +31,7 @@ def test_article_title(open_login_page):
 
 
 @pytest.mark.regression
-def test_page_url(open_login_page):
+def is_test_page_url(open_login_page):
     login_page = open_login_page
     python_page = login_page.login(ReadConfig.get_login(), ReadConfig.get_password())
-    assert python_page.check_url() is True
+    assert python_page.is_check_url() is True

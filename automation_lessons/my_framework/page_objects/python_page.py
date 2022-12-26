@@ -23,11 +23,11 @@ class PythonPage(BasePage):
     def is_title(self):
         return self.check_title(self.__title_Python_page)
 
-    def content_menu_is_visible(self):
+    def is_content_menu_visible(self):
         return self._is_visible(self.__content_menu)
 
     def is_article_title(self, text):
         return self.check_text_in_page(self.__article_title, text)
 
-    def check_url(self):
+    def is_check_url(self):
         return self.is_url_to_be(self.__page_url)
