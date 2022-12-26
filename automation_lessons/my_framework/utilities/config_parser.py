@@ -1,8 +1,10 @@
 import configparser
 
+from automation_lessons.my_framework.CONSTANTS import ROOT_DIR
+
 abs_path = '/home/denis/Python/Projects/hillel_qa_automation_160922/automation_lessons/less2/configurations/configuration.ini'
 config = configparser.RawConfigParser()
-config.read(abs_path)
+config.read(f'{ROOT_DIR}/configurations/configuration.ini')
 
 
 class ReadConfig:
