@@ -5,7 +5,7 @@ from automation_lessons.my_framework.utilities.config_parser import ReadConfig
 
 @pytest.mark.regression
 def test_title_name(open_login_page):
-    assert open_login_page.title() is True
+    assert open_login_page.is_title() is True
 
 
 @pytest.mark.regression
@@ -17,12 +17,12 @@ def test_not_valid_login(open_login_page, login, password):
 
 @pytest.mark.regression
 def test_left_menu_in_login_page(open_login_page):
-    assert open_login_page.left_menu_is_visible() is True
+    assert open_login_page.is_left_menu_visible() is True
 
 
 @pytest.mark.regression
 def test_header_in_login_page(open_login_page):
-    assert open_login_page.header_is_visible() is True
+    assert open_login_page.is_header_visible() is True
 
 
 @pytest.mark.smoke

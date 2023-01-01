@@ -16,16 +16,16 @@ class HomePage(BasePage):
 
 
     def is_title(self):
-        return self.check_title(self.__title)
+        return self._is_title(self.__title)
 
-    def search_is_visible(self):
+    def is_search_visible(self):
         return self._is_visible(self.__search)
 
-    def login_button_is_clickable(self):
+    def is_login_button_clickable(self):
         return self._is_clickable(self.__login_button)
 
-    def not_logged_in_is_visible(self):
+    def is_visible_not_logged_in(self):
         return self._is_visible(self.__not_logged_in)
 
-    def topics_is_visible(self):
+    def is_visible_topics(self):
         return self._is_visible(self.__topics)

@@ -1,3 +1,5 @@
+import json
+
 import pytest
 
 from automation_lessons.my_framework.page_objects.community_portal import CommunityPortal
@@ -38,3 +40,6 @@ def open_home_page(create_driver):
 def open_community_portal(create_driver):
     create_driver.get(ReadConfig.get_community_portal_page())
     return CommunityPortal(create_driver)
+
+
+

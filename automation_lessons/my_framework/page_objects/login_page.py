@@ -33,17 +33,15 @@ class LoginPage(BasePage):
         self.set_login(login).set_password(password).click_login_button()
         return PythonPage(self.driver)
 
-    def title(self):
-        return self.check_title(self.__title)
+    def is_title(self):
+        return self._is_title(self.__title)
 
     def check_not_valid_login_data(self):
         return self._is_visible(self.__message_invalid_login_details)
 
-    def left_menu_is_visible(self):
+    def is_left_menu_visible(self):
         return self._is_visible(self.__left_menu)
 
-    def header_is_visible(self):
+    def is_header_visible(self):
         return self._is_visible(self.__header)
 
-    def header_is_visible(self):
-        return self._is_visible(self.__header)
