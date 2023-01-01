@@ -36,8 +36,8 @@ def open_login_page(create_driver, env):
 
 
 @pytest.fixture()
-def open_reset_password_page(create_driver):
-    create_driver.get(ReadConfig.reset_password_page_url())
+def open_reset_password_page(create_driver, env):
+    create_driver.get(env.reset_password_page_url)
     return ResetPasswordPage(create_driver)
 
 
