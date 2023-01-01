@@ -48,6 +48,6 @@ def open_home_page(create_driver, env):
 
 
 @pytest.fixture()
-def open_community_portal(create_driver):
-    create_driver.get(ReadConfig.get_community_portal_page())
+def open_community_portal(create_driver, env):
+    create_driver.get(env.community_portal_url)
     return CommunityPortal(create_driver)
