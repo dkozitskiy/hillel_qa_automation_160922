@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-
 from automation_lessons.my_framework.utilities.config_parser import ReadConfig
 from automation_lessons.my_framework.utilities.web_ui.base_page import BasePage
 
@@ -30,5 +29,5 @@ class CommunityPortal(BasePage):
     def is_assist_and_social_life_visible(self):
         return self._is_visible(self.__assist_and_social_life)
 
-    def is_check_url(self):
-        return self.is_url_to_be(ReadConfig.get_community_portal_page())
+    def is_check_url(self, env):
+        return self.is_url_to_be(env)
