@@ -1,5 +1,7 @@
 import json
 import pytest
+
+from automation_lessons.my_framework.CONSTANTS import ROOT_DIR
 from automation_lessons.my_framework.page_objects.community_portal import CommunityPortal
 from automation_lessons.my_framework.page_objects.home_page import HomePage
 from automation_lessons.my_framework.page_objects.login_page import LoginPage
@@ -11,7 +13,7 @@ from automation_lessons.my_framework.utilities.driver_factory import DriverFacto
 
 @pytest.fixture(scope="session")
 def env():
-    with open('configuration.json') as f:
+    with open(f'{ROOT_DIR}/configurations/configuration.json') as f:
         data = f.read()
         json_to_dict = json.loads(data)
 
@@ -28,8 +30,8 @@ def create_driver():
 
 
 @pytest.fixture()
-def open_login_page(create_driver):
-    create_driver.get(ReadConfig.get_base_url())
+def open_login_page(create_driver, env):
+    create_driver.get(env.base_url)
     return LoginPage(create_driver)
 
 
