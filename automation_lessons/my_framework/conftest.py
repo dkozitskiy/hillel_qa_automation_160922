@@ -1,13 +1,22 @@
 import json
-
 import pytest
-
 from automation_lessons.my_framework.page_objects.community_portal import CommunityPortal
 from automation_lessons.my_framework.page_objects.home_page import HomePage
 from automation_lessons.my_framework.page_objects.login_page import LoginPage
 from automation_lessons.my_framework.page_objects.reset_password_page import ResetPasswordPage
 from automation_lessons.my_framework.utilities.config_parser import ReadConfig
+from automation_lessons.my_framework.utilities.configuration import Configuration
 from automation_lessons.my_framework.utilities.driver_factory import DriverFactory
+
+
+@pytest.fixture(scope="session")
+def env():
+    with open('configuration.json') as f:
+        data = f.read()
+        json_to_dict = json.loads(data)
+
+    config = Configuration(**json_to_dict)
+    return config
 
 
 @pytest.fixture()
@@ -40,6 +49,3 @@ def open_home_page(create_driver):
 def open_community_portal(create_driver):
     create_driver.get(ReadConfig.get_community_portal_page())
     return CommunityPortal(create_driver)
-
-
-
