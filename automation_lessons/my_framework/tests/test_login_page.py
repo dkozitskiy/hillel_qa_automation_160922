@@ -1,7 +1,5 @@
 import pytest
 
-from automation_lessons.my_framework.utilities.config_parser import ReadConfig
-
 
 @pytest.mark.regression
 def test_title_name(open_login_page):
