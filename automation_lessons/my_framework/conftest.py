@@ -22,8 +22,8 @@ def env():
 
 
 @pytest.fixture()
-def create_driver():
-    driver = DriverFactory.create_driver(ReadConfig.get_browser_id())
+def create_driver(env):
+    driver = DriverFactory.create_driver(env.browser_id)
     driver.maximize_window()
     yield driver
     driver.quit()

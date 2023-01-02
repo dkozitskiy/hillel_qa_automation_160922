@@ -26,7 +26,7 @@ def test_header_in_login_page(open_login_page):
 
 
 @pytest.mark.smoke
-def test_login(open_login_page):
+def test_login(open_login_page,env):
     login_page = open_login_page
-    python_page = login_page.login(ReadConfig.get_login(), ReadConfig.get_password())
+    python_page = login_page.login(env.login, env.password)
     assert python_page.is_login_visible() is True
