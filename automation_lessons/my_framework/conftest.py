@@ -6,7 +6,6 @@ from automation_lessons.my_framework.page_objects.community_portal import Commun
 from automation_lessons.my_framework.page_objects.home_page import HomePage
 from automation_lessons.my_framework.page_objects.login_page import LoginPage
 from automation_lessons.my_framework.page_objects.reset_password_page import ResetPasswordPage
-from automation_lessons.my_framework.utilities.config_parser import ReadConfig
 from automation_lessons.my_framework.utilities.configuration import Configuration
 from automation_lessons.my_framework.utilities.driver_factory import DriverFactory
 
