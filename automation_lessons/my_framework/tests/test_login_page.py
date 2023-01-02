@@ -9,7 +9,7 @@ def test_title_name(open_login_page):
 
 
 @pytest.mark.regression
-@pytest.mark.parametrize('login, password', [('not_valid@test.net', ReadConfig.get_password()), (ReadConfig.get_login(), 'A1qwerty')])
+@pytest.mark.parametrize('login, password', [('not_valid@test.net', '1iriver11234567890'), ('1iriver1', 'A1qwerty')])
 def test_not_valid_login(open_login_page, login, password):
     open_login_page.login(login, password)
     assert open_login_page.check_not_valid_login_data() is True
