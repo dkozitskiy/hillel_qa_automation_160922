@@ -27,5 +27,5 @@ def test_assist_and_social_lifein_page(open_community_portal):
 
 
 @pytest.mark.regression
-def test_page_url(open_community_portal):
-    assert open_community_portal.is_check_url() is True
+def test_page_url(open_community_portal, env):
+    assert open_community_portal.is_check_url(env.community_portal_url) is True
