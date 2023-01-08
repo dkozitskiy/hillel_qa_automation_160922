@@ -21,6 +21,7 @@ class BaseAPI:
 
 
 
+
     def post(self, url, body={'gender': 'female'}):
         json_obj = json.dumps(body)
         response = self.__request(url, json=json_obj)
