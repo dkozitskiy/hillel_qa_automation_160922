@@ -1,6 +1,7 @@
 import json
 import pytest
 
+from automation_lessons.data.gender import Gender
 from automation_lessons.my_framework.CONSTANTS import ROOT_DIR
 from automation_lessons.my_framework.page_objects.community_portal import CommunityPortal
 from automation_lessons.my_framework.page_objects.home_page import HomePage
@@ -50,3 +51,8 @@ def open_home_page(create_driver, env):
 def open_community_portal(create_driver, env):
     create_driver.get(env.community_portal_url)
     return CommunityPortal(create_driver)
+
+
+@pytest.fixture()
+def create_gender():
+    return Gender
