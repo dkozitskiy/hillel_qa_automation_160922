@@ -14,5 +14,9 @@ class BaseAPI:
         response = self.__request.post(f'{base_url}{url}', json=body)
         return response
 
+    def put(self, base_url, url, body=None):
+        response = self.__request.post(f'{base_url}{url}', json=body)
+        return response
+
 
 
