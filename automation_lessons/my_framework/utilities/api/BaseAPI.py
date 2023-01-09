@@ -10,20 +10,9 @@ class BaseAPI:
         response = self.__request.get(f'{base_url}{url}')
         return response
 
-
-
-
-
-
-
-
-
-
-
-
-
-    def post(self, url, body={'gender': 'female'}):
-        json_obj = json.dumps(body)
-        response = self.__request(url, json=json_obj)
+    def post(self, base_url, url, body=None):
+        response = self.__request.post(f'{base_url}{url}', json=body)
         return response
+
+
 
