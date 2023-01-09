@@ -1,6 +1,5 @@
 import json
 
-import requests
 from http import HTTPStatus
 
 from automation_lessons.api_collection.name_api import NameAPI
@@ -18,5 +17,3 @@ def test_body_genderize(env, create_gender):
     from_json = json.loads(response.text)
     actual_gender = Gender.create_from_json(**from_json)
     assert actual_gender == expected_gender
-
-

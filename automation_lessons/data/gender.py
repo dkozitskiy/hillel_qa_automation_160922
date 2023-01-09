@@ -21,5 +21,5 @@ class Gender:
     def get_json(self):
         return json.dumps(self.__dict__)
 
-    def get_dikt(self):
+    def get_dict(self):
         return json.loads(self.__dict__)

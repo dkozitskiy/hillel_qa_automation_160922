@@ -15,6 +15,6 @@ class NameAPI(BaseAPI):
         if body is not None:
             gender_data = gender_data
         else:
-            gender_data.update_dict(body)
+            gender_data.update_dict(**body)
         response = self.post(base_url, body=gender_data.get_json())
         return response
