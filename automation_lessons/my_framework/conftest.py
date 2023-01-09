@@ -55,4 +55,4 @@ def open_community_portal(create_driver, env):
 
 @pytest.fixture()
 def create_gender():
-    return Gender
+    return Gender(168019, 'male', 'Igor', 1.0)
